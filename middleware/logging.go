@@ -120,7 +120,7 @@ func ErrorLogging(log *logger.Logger) gin.HandlerFunc {
 				zap.String("path", c.Request.URL.Path),
 				zap.String("method", c.Request.Method),
 				zap.Error(err.Err),
-				zap.String("type", err.Type.String()),
+				zap.Int("type", int(err.Type)),
 			)
 		}
 	}
